@@ -1,0 +1,17 @@
+# Student Account Management System - Test Plan
+
+This test plan covers all business logic implemented in the COBOL application. It is designed for validation with business stakeholders and will be used for future unit and integration tests in the Node.js transformation.
+
+| Test Case ID | Test Case Description                | Pre-conditions                | Test Steps                                                                 | Expected Result                                 | Actual Result | Status (Pass/Fail) | Comments                |
+|--------------|--------------------------------------|-------------------------------|----------------------------------------------------------------------------|-------------------------------------------------|--------------|--------------------|-------------------------|
+| TC01         | View initial balance                 | App is started                | 1. Start app<br>2. Select 'View Balance'                                   | Balance displayed as 1000.00                     |              |                    |                         |
+| TC02         | Credit account with valid amount      | App is started, balance > 0   | 1. Start app<br>2. Select 'Credit Account'<br>3. Enter 100.00              | Balance increases by 100.00                      |              |                    |                         |
+| TC03         | Debit account with valid amount       | App is started, balance > 0   | 1. Start app<br>2. Select 'Debit Account'<br>3. Enter 200.00               | Balance decreases by 200.00                      |              |                    |                         |
+| TC04         | Debit account with insufficient funds | App is started, balance = 100 | 1. Start app<br>2. Select 'Debit Account'<br>3. Enter 200.00               | Error message: 'Insufficient funds for this debit.' |              |                    |                         |
+| TC05         | Exit application                     | App is started                | 1. Start app<br>2. Select 'Exit'                                            | App exits, goodbye message displayed             |              |                    |                         |
+| TC06         | Invalid menu choice                   | App is started                | 1. Start app<br>2. Enter invalid menu option (e.g., 5)                      | Error message: 'Invalid choice, please select 1-4.' |              |                    |                         |
+| TC07         | Credit account with zero amount       | App is started                | 1. Start app<br>2. Select 'Credit Account'<br>3. Enter 0.00                | Balance remains unchanged                        |              |                    |                         |
+| TC08         | Debit account with zero amount        | App is started                | 1. Start app<br>2. Select 'Debit Account'<br>3. Enter 0.00                 | Balance remains unchanged                        |              |                    |                         |
+| TC09         | Multiple credits and debits           | App is started                | 1. Start app<br>2. Perform multiple credit/debit operations                 | Balance updates correctly after each operation   |              |                    |                         |
+
+> Fill in Actual Result, Status, and Comments during test execution.
